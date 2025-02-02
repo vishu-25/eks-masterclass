@@ -19,7 +19,14 @@ spec:
         - name: usermgmt-restapp
           image: stacksimplify/kube-usermanagement-microservice:1.0.0
           ports: 
-            - containerPort: 8095           
+            - containerPort: 8095 
+          resources:
+            requests:
+              memory: "128Mi" # 128 MebiByte is equal to 135 Megabyte (MB)
+              cpu: "500m" # `m` means milliCPU
+            limits:
+              memory: "500Mi"
+              cpu: "1000m"  # 1000m is equal to 1 VCPU core          
           env:
             - name: DB_HOSTNAME
               value: "mysql"            
