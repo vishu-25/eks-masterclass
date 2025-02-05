@@ -17,7 +17,7 @@ spec:
     spec: 
       containers:
         - name: mysql
-          image: mysql:9.1
+          image: mysql:latest
           resources:
             requests:
               memory: "128Mi" # 128 MebiByte is equal to 135 Megabyte (MB)
